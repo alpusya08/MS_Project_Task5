@@ -74,8 +74,8 @@ class UserControllerIntegrationTest {
 
         UserResponse userResponse = UserResponse.builder()
                 .firstName("Alpamys")
-                .lastName("Batyr")
-                .email("alpamys@example.com")
+                .lastName("Paninov")
+                .email("123@gmail.com")
                 .roles(List.of("ROLE_USER"))
                 .groups(List.of("GroupA"))
                 .build();
@@ -85,8 +85,8 @@ class UserControllerIntegrationTest {
         mockMvc.perform(get("/api/users/{id}", id))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.firstName").value("Alpamys"))
-                .andExpect(jsonPath("$.lastName").value("Batyr"))
-                .andExpect(jsonPath("$.email").value("alpamys@example.com"))
+                .andExpect(jsonPath("$.lastName").value("Paninov"))
+                .andExpect(jsonPath("$.email").value("123@gmail.com"))
                 .andExpect(jsonPath("$.roles[0]").value("ROLE_USER"))
                 .andExpect(jsonPath("$.groups[0]").value("GroupA"));
     }
